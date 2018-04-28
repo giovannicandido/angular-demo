@@ -1,0 +1,19 @@
+<!--Refatorar para component-->
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large">
+    <h1><span class="ion-refresh"></span> Loading</h1>
+  </div>
+</div>
+
+<div class="uk-section-small uk-section-default">
+  <div class="uk-container uk-container-large">
+    <app-loading></app-loading>
+    <p>
+      {{response}}
+    </p>
+    <div uk-grid>
+      <button class="uk-button uk-button-default" (click)="perform()">Get It</button>
+      <input [(ngModel)]="loadingInterceptor.delayTime" />
+    </div>
+  </div>
+</div>

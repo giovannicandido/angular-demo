@@ -1,0 +1,31 @@
+<div [@flyInOut] id="sidebar" class="tm-sidebar-left uk-background-default" *ngIf="show">
+  <div>
+    <div class="user">
+      <img id="avatar" width="100" class="uk-border-circle" src="assets/images/avatar.jpg" />
+      <div class="uk-margin-top"></div>
+      <div id="name" class="uk-text-truncate">Èrik Campobadal</div>
+      <div id="email" class="uk-text-truncate">ConsoleTVs@gmail.com</div>
+      <span id="status" data-enabled="true" data-online-text="Online" data-away-text="Away" data-interval="10000" class="uk-margin-top uk-label uk-label-success"></span>
+    </div>
+    <br />
+  </div>
+  <ul class="uk-nav uk-nav-default">
+    <li><a routerLink="/home">Home</a></li>
+    <li class="uk-nav-header">
+      Interceptors
+    </li>
+    <li ><a routerLink="/loading">Loading</a></li>
+    <li><a routerLink="/message" >Message</a></li>
+
+    <li class="uk-nav-header">
+      Security
+    </li>
+    <li><a href="login.html">Oauth</a></li>
+    <li><a href="register.html">Security Directives</a></li>
+    <li class="uk-nav-header">Components</li>
+    <li><a>Communication</a></li>
+    <li><a>Events</a></li>
+    <li><a>CRUD</a></li>
+  </ul>
+</div>
+
