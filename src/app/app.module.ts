@@ -1,17 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
 
 
-import { AppComponent } from './app.component';
-import {AuthModule, InitOptions} from 'angular-spa';
-import {HttpModule} from '@angular/http';
-import { SidemenuComponent } from './sidemenu/sidemenu.component';
-import { TopbarComponent } from './topbar/topbar.component';
-import { HomeComponent } from './home/home.component';
-import {RouterModule} from '@angular/router';
-import {appRoutes} from './app.routes';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {InterceptorsModule} from './interceptors/interceptors.module';
+import { AppComponent } from './app.component'
+import { AuthModule, InitOptions } from 'angular-spa'
+import { HttpModule } from '@angular/http'
+import { SidemenuComponent } from './sidemenu/sidemenu.component'
+import { TopbarComponent } from './topbar/topbar.component'
+import { HomeComponent } from './home/home.component'
+import { RouterModule } from '@angular/router'
+import { appRoutes } from './app.routes'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { InterceptorsModule } from './interceptors/interceptors.module'
 import { CommonModule } from './common/common.module'
 
 

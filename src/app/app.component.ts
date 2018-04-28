@@ -1,5 +1,5 @@
-import {Component, ElementRef, OnInit, Input, ViewChild} from '@angular/core';
-import {AuthService} from 'angular-spa';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import { AuthService } from 'angular-spa'
 
 @Component({
   selector: 'app-root',

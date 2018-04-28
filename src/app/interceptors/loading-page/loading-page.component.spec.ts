@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { LoadingPageComponent } from './loading-page.component';
+import { LoadingPageComponent } from './loading-page.component'
 
 describe('LoadingPageComponent', () => {
   let component: LoadingPageComponent;

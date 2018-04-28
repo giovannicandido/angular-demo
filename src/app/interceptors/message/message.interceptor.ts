@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Interceptor } from 'angular-http-interceptor'
-import {Response} from '@angular/http'
+import { Response } from '@angular/http'
 import { RequestArgs } from '@angular/http/src/interfaces'
 import { Observable } from 'rxjs/Observable'
 import { MessageService } from '../../common/message.service'

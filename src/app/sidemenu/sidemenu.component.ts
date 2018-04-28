@@ -1,6 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {state, trigger, style, animate, transition} from '@angular/animations';
-import {HideEvent} from './hide-event';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
+import { animate, state, style, transition, trigger } from '@angular/animations'
 
 @Component({
   selector: 'app-sidemenu',

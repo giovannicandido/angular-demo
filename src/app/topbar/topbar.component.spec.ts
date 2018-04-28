@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { TopbarComponent } from './topbar.component';
+import { TopbarComponent } from './topbar.component'
 
 describe('TopbarComponent', () => {
   let component: TopbarComponent;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { LoadingInterceptorService } from './loading-interceptor.service'
 
 @Component({

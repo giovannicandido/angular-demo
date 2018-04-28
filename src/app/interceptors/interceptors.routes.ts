@@ -2,10 +2,9 @@
  *
  * @author Giovanni Silva
  */
-import {NgModule} from '@angular/core';
-import {Route, RouterModule, Routes} from '@angular/router';
-import {LoadingComponent} from './loading/loading.component';
-import {MessageComponent} from './message/message.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { MessageComponent } from './message/message.component'
 import { LoadingPageComponent } from './loading-page/loading-page.component'
 
 export const interceptorsRoute: Routes = [
