@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '../common/common.module'
 import { LoadingComponent } from './loading/loading.component'
 import { MessageComponent } from './message/message.component'
 import { InterceptorsRouteModule } from './interceptors.routes'

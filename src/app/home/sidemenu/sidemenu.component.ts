@@ -6,18 +6,6 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   templateUrl: './sidemenu.component.html',
   styleUrls: ['./sidemenu.component.css'],
   animations: [
-    trigger('heroState', [
-      state('inactive', style({
-        backgroundColor: '#eee',
-        transform: 'scale(1)'
-      })),
-      state('active',   style({
-        backgroundColor: '#cfd8dc',
-        transform: 'scale(1.1)'
-      })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out'))
-    ]),
     trigger('flyInOut', [
       state('in', style({opacity: 1, transform: 'translateX(0)'})),
       transition('void => *', [
@@ -37,25 +25,26 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class SidemenuComponent implements OnInit {
-  private show = true;
+  show = true
 
   @Output()
-  onHide = new EventEmitter();
+  onHide = new EventEmitter()
 
   @Output()
-  onShow = new EventEmitter();
+  onShow = new EventEmitter()
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   toggle() {
-    this.show = !this.show;
+    this.show = !this.show
     if (this.show) {
-      this.onShow.emit();
+      this.onShow.emit()
     } else {
-      this.onHide.emit();
+      this.onHide.emit()
     }
   }
 

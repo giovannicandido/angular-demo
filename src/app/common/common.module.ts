@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core'
 import { MessageService } from './message.service'
 import { CommonModule as AngularCommon } from '@angular/common'
 import { HttpModule } from '@angular/http'
+import { TitleComponent } from './title/title.component'
+import { RandomMessageService } from './services/random-message.service'
 
 @NgModule({
   imports: [
@@ -9,12 +11,15 @@ import { HttpModule } from '@angular/http'
     HttpModule
   ],
   providers: [
-    MessageService
+    MessageService,
+    RandomMessageService
   ],
-  declarations: [],
+  declarations: [TitleComponent],
   exports: [
     AngularCommon,
-    HttpModule
+    HttpModule,
+    TitleComponent
   ]
 })
-export class CommonModule { }
+export class CommonModule {
+}

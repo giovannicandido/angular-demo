@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { MessageService } from '../../common/message.service'
 import { Http } from '@angular/http'
+import { RandomMessageService } from '../../common/services/random-message.service'
 
 @Component({
   selector: 'app-message',
@@ -9,15 +9,15 @@ import { Http } from '@angular/http'
 })
 export class MessageComponent implements OnInit {
 
-  constructor(public messageService: MessageService, private http: Http) { }
+
+  constructor(private http: Http, private randomMessageService: RandomMessageService) { }
 
   ngOnInit() {
   }
 
   getText() {
-    const messageNumber = this.getRandomInt(1, 4)
-    this.http.get(`assets/data/message${messageNumber}.json`).subscribe((r) => {
-      console.info(r.json())
+    this.randomMessageService.getMessage().subscribe(r => {
+      console.info(r)
     })
   }
 
@@ -25,10 +25,6 @@ export class MessageComponent implements OnInit {
     this.http.get('notfound').subscribe()
   }
 
-  private getRandomInt(min, max) {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min)) + min
-  }
+
 
 }

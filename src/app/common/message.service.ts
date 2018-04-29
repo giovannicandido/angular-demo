@@ -18,7 +18,11 @@ export class MessageService {
     UIkit.notification(this.getMessageWithDetail(message), {status: kclass})
   }
 
-  mapLevelToCSSClass(level: CssLevel) {
+  confirm(message: string, fn: () => any) {
+    UIkit.modal.confirm(message).then(fn)
+  }
+
+  private mapLevelToCSSClass(level: CssLevel) {
     switch (level) {
       case 'info': {
         return 'primary'
@@ -38,7 +42,7 @@ export class MessageService {
     }
   }
 
-  getMessageWithDetail(message: Message): string {
+  private getMessageWithDetail(message: Message): string {
 
       return `
           <div class='summary'>${message.summary ? message.summary : ''}</div>

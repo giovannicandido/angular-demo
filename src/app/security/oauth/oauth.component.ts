@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { RandomMessageService } from '../../common/services/random-message.service'
 
 @Component({
   selector: 'app-oauth',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core'
 })
 export class OauthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private randomMessageService: RandomMessageService) { }
 
   ngOnInit() {
+  }
+
+  getText() {
+    this.randomMessageService.getMessage().subscribe()
   }
 
 }

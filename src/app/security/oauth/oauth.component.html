@@ -1,3 +1,16 @@
-<p>
-  oauth works!
-</p>
+<app-title title="Oauth" icon="ion-key"></app-title>
+<div class="uk-section uk-section-default">
+  <div class="uk-container">
+    <article *secIsAuthenticated class="uk-article">
+      <h1 class="uk-article-title">Nice! you are authenticated</h1>
+
+      <div class="uk-grid-small uk-child-width-auto" uk-grid>
+        <div>
+          <button class="uk-button" (click)="getText()">Test</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+
+</div>
