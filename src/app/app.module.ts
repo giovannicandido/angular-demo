@@ -1,35 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
-
 import { AppComponent } from './app.component'
 import { AuthModule, InitOptions } from 'angular-spa'
-import { HttpModule } from '@angular/http'
-import { SidemenuComponent } from './sidemenu/sidemenu.component'
-import { TopbarComponent } from './topbar/topbar.component'
-import { HomeComponent } from './home/home.component'
 import { RouterModule } from '@angular/router'
 import { appRoutes } from './app.routes'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { InterceptorsModule } from './interceptors/interceptors.module'
-import { CommonModule } from './common/common.module'
+import { SecurityModule } from './security/security.module'
+import { HomeModule } from './home/home.module'
+import { ComponentsModule } from './components/components.module'
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidemenuComponent,
-    TopbarComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
-    AuthModule,
     RouterModule.forRoot(appRoutes),
+    AuthModule,
+    HomeModule,
     InterceptorsModule,
-    CommonModule
+    SecurityModule,
+    ComponentsModule
   ],
   providers: [
     {
