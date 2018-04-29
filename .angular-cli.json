@@ -28,7 +28,9 @@
         "../node_modules/uikit/dist/js/uikit-icons.min.js",
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/jquery.transit/jquery.transit.js",
-        "../node_modules/notyf/dist/notyf.min.js"
+        "../node_modules/notyf/dist/notyf.min.js",
+        "../node_modules/notyf/dist/notyf.min.js",
+        "../node_modules/prismjs/prism.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

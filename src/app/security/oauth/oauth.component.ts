@@ -8,7 +8,8 @@ import { RandomMessageService } from '../../common/services/random-message.servi
 })
 export class OauthComponent implements OnInit {
 
-  constructor(private randomMessageService: RandomMessageService) { }
+  constructor(private randomMessageService: RandomMessageService) {
+  }
 
   ngOnInit() {
   }

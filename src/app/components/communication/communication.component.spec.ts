@@ -3,23 +3,23 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { CommunicationComponent } from './communication.component'
 
 describe('CommunicationComponent', () => {
-  let component: CommunicationComponent;
-  let fixture: ComponentFixture<CommunicationComponent>;
+  let component: CommunicationComponent
+  let fixture: ComponentFixture<CommunicationComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommunicationComponent ]
+      declarations: [CommunicationComponent]
     })
-    .compileComponents();
-  }));
+      .compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommunicationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(CommunicationComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

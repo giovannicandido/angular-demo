@@ -10,7 +10,8 @@ import { RandomMessageService } from '../../common/services/random-message.servi
 export class MessageComponent implements OnInit {
 
 
-  constructor(private http: Http, private randomMessageService: RandomMessageService) { }
+  constructor(private http: Http, private randomMessageService: RandomMessageService) {
+  }
 
   ngOnInit() {
   }
@@ -24,7 +25,6 @@ export class MessageComponent implements OnInit {
   simulateError() {
     this.http.get('notfound').subscribe()
   }
-
 
 
 }

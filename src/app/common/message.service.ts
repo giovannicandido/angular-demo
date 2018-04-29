@@ -44,7 +44,7 @@ export class MessageService {
 
   private getMessageWithDetail(message: Message): string {
 
-      return `
+    return `
           <div class='summary'>${message.summary ? message.summary : ''}</div>
           <div class="message">${message.detail}</div>
       `

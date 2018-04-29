@@ -36,4 +36,5 @@ import { MessageInterceptor } from './message/message.interceptor'
     InterceptorsRouteModule
   ]
 })
-export class InterceptorsModule { }
+export class InterceptorsModule {
+}

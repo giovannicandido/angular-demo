@@ -18,6 +18,37 @@ import { bounceOutUp } from 'ng-animate'
 export class DirectivesComponent implements OnInit {
   destroyState = 'normal'
 
+  example1 = `
+  <div *secIsAuthenticated>
+   You are Authenticated
+  </div>
+  `
+
+  example2 = `<div *secHasRole="'president'">
+  You are The President
+  <button class="uk-button uk-button-danger" (click)="launchNuclearAttack()">Launch Nuclear Attack</button>
+</div>
+
+<div *secHasRole="'admin'">
+  You are admin
+  <button class="uk-button uk-button-danger" (click)="resetPassword()">Reset Password</button>
+</div>
+  `
+
+  example3 = `<p>
+  Are you the President?
+  <button *secHasRole="'president'; action 'addClass'" class="uk-button uk-button-danger"
+          (click)="launchNuclearAttack()">Launch Nuclear Attack
+  </button>
+</p>
+<p>
+  You are admin?
+  <button *secHasRole="'admin'; action 'addClass'" class="uk-button uk-button-secondary"
+          (click)="resetPassword()">Reset Password
+  </button>
+</p>
+  `
+
   constructor(private messageService: MessageService) {
   }
 

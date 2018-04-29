@@ -1,109 +1,41 @@
 <app-title title="Auth Directives" icon="ion-key"></app-title>
 
-<div class="uk-background-contain uk-background-muted"
+<div class="uk-background-top-center uk-background-muted"
      style="background-image: url(assets/images/rocket.jpg);">
 
   <div [@destroy]="destroyState" (@destroy.done)="destroyState = 'normal'">
     <div class="uk-container">
-      <article class="uk-article">
-
-        <h1 class="uk-article-title">
-          SecIsAuthenticated
-        </h1>
-
-        <p>Checa se a pessoa está logada</p>
-
-        <div class="uk-card uk-card-default uk-card-body">
-          <code>
-            &lt;div *secIsAuthenticated&gt;
-            You are authenticated
-            &lt;/div&gt;
-          </code>
+      <app-example title="SecIsAuthenticated" description="Checa se a pessoa está logada" [code]="example1">
+        <div *secIsAuthenticated>
+          You are Authenticated
+        </div>
+      </app-example>
+      <app-example title="SecHasRole" description="Verifica se pessoa esté em grupo" [code]="example2">
+        <div *secHasRole="'president'">
+          You are The President
+          <button class="uk-button uk-button-danger" (click)="launchNuclearAttack()">Launch Nuclear Attack</button>
         </div>
 
-        <div class="uk-card uk-card-primary uk-card-body">
-          <h3 class="uk-card-title">Result</h3>
-
-          <div *secIsAuthenticated>
-            You are Authenticated
-          </div>
+        <div *secHasRole="'admin'">
+          You are admin
+          <button class="uk-button uk-button-danger" (click)="resetPassword()">Reset Password</button>
         </div>
-      </article>
+      </app-example>
+      <app-example title="Disabling" description="Desabilita um elemento ao invés de removê-lo" [code]="example3">
+        <p>
+          Are you the President?
+          <button *secHasRole="'president'; action 'addClass'" class="uk-button uk-button-danger"
+                  (click)="launchNuclearAttack()">Launch Nuclear Attack
+          </button>
+        </p>
+        <p>
+          You are admin?
+          <button *secHasRole="'admin'; action 'addClass'" class="uk-button uk-button-secondary"
+                  (click)="resetPassword()">Reset Password
+          </button>
+        </p>
+      </app-example>
 
-      <hr class="uk-divider-icon"/>
-
-      <article class="uk-article">
-        <h1 class="uk-article-title">SecIsHasRole</h1>
-
-        <p>Verifica se pessoa está em grupo</p>
-
-        <div class="uk-card uk-card-default uk-card-body">
-          <code>
-            &lt;div *secHasRole=&quot;'president'&quot;&gt; <br/>
-            You are The President <br/>
-            &lt;button class=&quot;uk-button uk-button-danger&quot;&gt;Launch Nuclear Attack&lt;/button&gt; <br/>
-            &lt;/div&gt; <br/>
-            <br/>
-            &lt;div *secHasRole=&quot;'admin'&quot;&gt; <br/>
-            You are admin <br/>
-            &lt;button class=&quot;uk-button uk-button-danger&quot;&gt;Reset Password&lt;/button&gt; <br/>
-            &lt;/div&gt;
-          </code>
-
-        </div>
-        <div class="uk-card uk-card-primary uk-card-body">
-          <h3 class="uk-card-title">Result</h3>
-          <div *secHasRole="'president'">
-            You are The President
-            <button class="uk-button uk-button-danger" (click)="launchNuclearAttack()">Launch Nuclear Attack</button>
-          </div>
-
-          <div *secHasRole="'admin'">
-            You are admin
-            <button class="uk-button uk-button-danger" (click)="resetPassword()">Reset Password</button>
-          </div>
-        </div>
-      </article>
-
-      <hr class="uk-divider-icon"/>
-
-      <article class="uk-article">
-        <h1 class="uk-article-title">Desabilitando</h1>
-
-        <p>Desabilita um elemento ao invés de removê-lo</p>
-
-        <div class="uk-card uk-card-default uk-card-body">
-          <code>
-            &lt;p&gt;<br/>
-            Are you the President?<br/>
-            &lt;button *secHasRole=&quot;'president'; action 'addClass'&quot; class=&quot;uk-button uk-button-danger&quot;&gt;Launch
-            Nuclear Attack<br/>
-            &lt;/button&gt;<br/>
-            &lt;/p&gt;<br/>
-            &lt;p&gt;<br/>
-            You are admin?<br/>
-            &lt;button *secHasRole=&quot;'admin'; action 'addClass'&quot; class=&quot;uk-button uk-button-danger&quot;&gt;Reset
-            Password&lt;/button&gt;<br/>
-            &lt;/p&gt;
-          </code>
-        </div>
-
-        <div class="uk-card uk-card-primary uk-card-body">
-          <h3 class="uk-card-title">Result</h3>
-          <p>
-            Are you the President?
-            <button *secHasRole="'president'; action 'addClass'" class="uk-button uk-button-danger"
-                    (click)="launchNuclearAttack()">Launch Nuclear Attack
-            </button>
-          </p>
-          <p>
-            You are admin?
-            <button *secHasRole="'admin'; action 'addClass'" class="uk-button uk-button-secondary"
-                    (click)="resetPassword()">Reset Password
-            </button>
-          </p>
-        </div>
-      </article>
 
     </div>
   </div>

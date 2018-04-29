@@ -6,10 +6,10 @@ describe('MessageService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [MessageService]
-    });
-  });
+    })
+  })
 
   it('should be created', inject([MessageService], (service: MessageService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+    expect(service).toBeTruthy()
+  }))
+})

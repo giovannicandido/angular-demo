@@ -8,7 +8,8 @@ import { LoadingInterceptorService } from './loading-interceptor.service'
 })
 export class LoadingComponent implements OnInit {
 
-  constructor(public service: LoadingInterceptorService) { }
+  constructor(public service: LoadingInterceptorService) {
+  }
 
   ngOnInit() {
   }

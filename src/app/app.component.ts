@@ -17,15 +17,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   }
+
   login() {
-    this.authService.login();
+    this.authService.login()
   }
 
   moveContentLeft() {
-    this.contentRef.nativeElement.classList.remove('content-padder');
+    this.contentRef.nativeElement.classList.remove('content-padder')
   }
 
   moveContentRight() {
-    this.contentRef.nativeElement.classList.add('content-padder');
+    this.contentRef.nativeElement.classList.add('content-padder')
   }
 }

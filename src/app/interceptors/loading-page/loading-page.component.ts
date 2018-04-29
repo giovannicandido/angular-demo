@@ -10,7 +10,8 @@ import { LoadingInterceptor } from '../loading/loading-interceptor'
 export class LoadingPageComponent implements OnInit {
   response: string
 
-  constructor(private http: Http, public loadingInterceptor: LoadingInterceptor) { }
+  constructor(private http: Http, public loadingInterceptor: LoadingInterceptor) {
+  }
 
   ngOnInit() {
   }

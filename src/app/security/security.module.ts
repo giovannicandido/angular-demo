@@ -16,4 +16,5 @@ import { AuthModule } from 'angular-spa'
   ],
   declarations: [OauthComponent, DirectivesComponent]
 })
-export class SecurityModule { }
+export class SecurityModule {
+}

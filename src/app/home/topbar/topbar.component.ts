@@ -9,11 +9,12 @@ export class TopbarComponent implements OnInit {
 
   @Output()
   onMenuClick = new EventEmitter()
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 
 
 }

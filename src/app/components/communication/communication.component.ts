@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core'
 })
 export class CommunicationComponent implements OnInit {
 
-  constructor() { }
+  example1 = `
+    <div (click)="bla()" class="fuck">
+      <p>Now is</p>
+    </div>
+  `
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  show() {
+    console.info('show is running')
   }
 
 }

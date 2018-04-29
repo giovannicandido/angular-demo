@@ -3,23 +3,23 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { LoadingPageComponent } from './loading-page.component'
 
 describe('LoadingPageComponent', () => {
-  let component: LoadingPageComponent;
-  let fixture: ComponentFixture<LoadingPageComponent>;
+  let component: LoadingPageComponent
+  let fixture: ComponentFixture<LoadingPageComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoadingPageComponent ]
+      declarations: [LoadingPageComponent]
     })
-    .compileComponents();
-  }));
+      .compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(LoadingPageComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

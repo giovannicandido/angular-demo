@@ -4,6 +4,8 @@ import { CommonModule as AngularCommon } from '@angular/common'
 import { HttpModule } from '@angular/http'
 import { TitleComponent } from './title/title.component'
 import { RandomMessageService } from './services/random-message.service'
+import { ExampleComponent } from './example/example.component'
+import { KeepHtmlPipe } from './pipes/keep-html.pipe'
 
 @NgModule({
   imports: [
@@ -14,11 +16,13 @@ import { RandomMessageService } from './services/random-message.service'
     MessageService,
     RandomMessageService
   ],
-  declarations: [TitleComponent],
+  declarations: [TitleComponent, ExampleComponent, KeepHtmlPipe],
   exports: [
     AngularCommon,
     HttpModule,
-    TitleComponent
+    TitleComponent,
+    ExampleComponent,
+    KeepHtmlPipe
   ]
 })
 export class CommonModule {
