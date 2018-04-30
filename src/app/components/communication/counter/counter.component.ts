@@ -1,7 +1,7 @@
-import {Component, Input, OnInit, Output} from '@angular/core'
-import {range} from 'rxjs/observable/range'
-import {Observable} from 'rxjs/Observable'
-import {Subject} from 'rxjs/Subject'
+import { Component, Input, OnInit, Output } from '@angular/core'
+import { range } from 'rxjs/observable/range'
+import { Observable } from 'rxjs/Observable'
+import { Subject } from 'rxjs/Subject'
 
 @Component({
   selector: 'app-counter',

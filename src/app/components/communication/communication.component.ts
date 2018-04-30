@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core'
-import {CounterComponent} from './counter/counter.component'
-import {CounterService} from './counter.service'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { CounterComponent } from './counter/counter.component'
+import { CounterService } from './counter.service'
 
 @Component({
   selector: 'app-communication',

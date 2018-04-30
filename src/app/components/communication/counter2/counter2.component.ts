@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {CounterService} from '../counter.service'
+import { Component, OnInit } from '@angular/core'
+import { CounterService } from '../counter.service'
 
 @Component({
   selector: 'app-counter2',
@@ -8,7 +8,8 @@ import {CounterService} from '../counter.service'
 })
 export class Counter2Component implements OnInit {
 
-  constructor(public counterService: CounterService) { }
+  constructor(public counterService: CounterService) {
+  }
 
   ngOnInit() {
   }

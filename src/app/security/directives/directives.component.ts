@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core'
-import {MessageService} from '../../common/message.service'
+import { Component, OnInit } from '@angular/core'
+import { MessageService } from '../../common/message.service'
 
-import {transition, trigger, useAnimation} from '@angular/animations'
-import {bounceOutUp} from 'ng-animate'
+import { transition, trigger, useAnimation } from '@angular/animations'
+import { bounceOutUp } from 'ng-animate'
 
 
 @Component({
