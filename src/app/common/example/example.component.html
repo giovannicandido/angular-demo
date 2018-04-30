@@ -4,8 +4,8 @@
   </h1>
 
   <p>{{description}}</p>
-  <pre>
-      <code [innerHTML]="code | keepHtml" class="language-markup">
+  <pre *ngFor="let c of code">
+      <code [innerHTML]="c.code | keepHtml" class="language-{{c.language}}">
 
       </code>
     </pre>

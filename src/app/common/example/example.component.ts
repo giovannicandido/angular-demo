@@ -14,20 +14,28 @@ export class ExampleComponent {
   @Input()
   description: string
 
-  _code: string
+  _code: Code[]
 
   constructor() {
   }
 
-  get code() {
+  get code(): Code[] {
     return this._code
   }
 
   @Input()
-  set code(code: string) {
-    this._code = Prism.highlight(code, Prism.languages.html, Prism.languages.html)
+  set code(code: Code[]) {
+    for (const c of code) {
+      c.code = Prism.highlight(c.code, Prism.languages[c.language], Prism.languages[c.language])
+    }
+    this._code = code
   }
 
+}
+
+export interface Code {
+  code: string,
+  language: string
 }
 
 

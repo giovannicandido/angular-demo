@@ -4,9 +4,27 @@
 
   <app-example title="Template Ref"
                description="Usando referencia diretamente no template"
-               [code]="example1">
+               [code]="example1"
+               >
 
-    <p>Exemplo</p>
+      <app-counter (onNewNumber)="second.counter = $event"></app-counter>
+      <app-counter #second></app-counter>
+  </app-example>
+
+  <app-example title="ViewChild" description="Usando @ViewChild" [code]="example2">
+
+    <app-counter #viewChild></app-counter>
+    <app-counter #viewChild2></app-counter>
+  </app-example>
+
+  <app-example title="Shared service" description="Usando um serviço compartilhado" [code]="example3" >
+
+    <app-counter2></app-counter2>
+    <app-counter2></app-counter2>
+
+    <p>Current counter service value</p>
+
+    {{counterService.counter}}
 
   </app-example>
 

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core'
-import { MessageService } from '../../common/message.service'
+import {Component, OnInit} from '@angular/core'
+import {MessageService} from '../../common/message.service'
 
-import { transition, trigger, useAnimation } from '@angular/animations'
-import { bounceOutUp } from 'ng-animate'
+import {transition, trigger, useAnimation} from '@angular/animations'
+import {bounceOutUp} from 'ng-animate'
 
 
 @Component({
@@ -18,13 +18,17 @@ import { bounceOutUp } from 'ng-animate'
 export class DirectivesComponent implements OnInit {
   destroyState = 'normal'
 
-  example1 = `
+  example1 = [{
+    code: `
   <div *secIsAuthenticated>
    You are Authenticated
   </div>
-  `
+  `,
+    language: 'html'
+  }]
 
-  example2 = `<div *secHasRole="'president'">
+  example2 = [{
+    code: `<div *secHasRole="'president'">
   You are The President
   <button class="uk-button uk-button-danger" (click)="launchNuclearAttack()">Launch Nuclear Attack</button>
 </div>
@@ -33,9 +37,12 @@ export class DirectivesComponent implements OnInit {
   You are admin
   <button class="uk-button uk-button-danger" (click)="resetPassword()">Reset Password</button>
 </div>
-  `
+  `,
+    language: 'html'
+  }]
 
-  example3 = `<p>
+  example3 = [{
+    code: `<p>
   Are you the President?
   <button *secHasRole="'president'; action 'addClass'" class="uk-button uk-button-danger"
           (click)="launchNuclearAttack()">Launch Nuclear Attack
@@ -47,7 +54,9 @@ export class DirectivesComponent implements OnInit {
           (click)="resetPassword()">Reset Password
   </button>
 </p>
-  `
+  `,
+    language: 'html'
+  }]
 
   constructor(private messageService: MessageService) {
   }
