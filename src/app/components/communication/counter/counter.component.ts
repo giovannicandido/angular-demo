@@ -39,7 +39,7 @@ export class CounterComponent implements OnInit {
   constructor() {
   }
 
-  // bug event is - 1
+  // FIXME bug event is - 1
   click() {
     this.source.next(this.counter++)
   }

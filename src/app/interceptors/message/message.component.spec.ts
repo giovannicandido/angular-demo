@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { MessageComponent } from './message.component'
+import { TitleComponent } from '../../common/title/title.component'
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
+import { HttpModule, XHRBackend } from '@angular/http'
+import { MockBackend } from '@angular/http/testing'
+import { RandomMessageService } from '../../common/services/random-message.service'
 
 describe('MessageComponent', () => {
   let component: MessageComponent
@@ -8,7 +13,16 @@ describe('MessageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MessageComponent]
+      imports: [
+        HttpModule
+      ],
+      declarations: [MessageComponent, TitleComponent],
+      providers: [
+        {
+          provide: XHRBackend,
+          useClass: MockBackend
+        }, RandomMessageService
+      ]
     })
       .compileComponents()
   }))

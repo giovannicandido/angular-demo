@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { ExampleComponent } from './example.component'
+import { KeepHtmlPipe } from '../pipes/keep-html.pipe'
+import { CommonModule } from '@angular/common'
 
 describe('ExampleComponent', () => {
   let component: ExampleComponent
@@ -8,7 +10,10 @@ describe('ExampleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ExampleComponent]
+      imports: [
+        CommonModule
+      ],
+      declarations: [ExampleComponent, KeepHtmlPipe]
     })
       .compileComponents()
   }))

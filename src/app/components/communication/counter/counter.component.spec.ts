@@ -1,6 +1,6 @@
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing'
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing'
 
-import {CounterComponent} from './counter.component'
+import { CounterComponent } from './counter.component'
 
 describe('CounterComponent', () => {
   let component: CounterComponent

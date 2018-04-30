@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { CrudComponent } from './crud.component'
+import { TitleComponent } from '../../common/title/title.component'
 
 describe('CrudComponent', () => {
   let component: CrudComponent
@@ -8,7 +9,7 @@ describe('CrudComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CrudComponent]
+      declarations: [TitleComponent, CrudComponent]
     })
       .compileComponents()
   }))
