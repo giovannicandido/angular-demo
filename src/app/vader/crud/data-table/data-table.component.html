@@ -1,0 +1,31 @@
+<!-- TODO Toolbar and actions -->
+<p-toolbar *ngIf="options.actions">
+  <ng-content select="[toolbar]"></ng-content>
+  <div *ngIf="options.actions" class="ui-toolbar-group-right">
+
+    <button pButton type="button" icon="fa-plus" (click)="onNewAction.next()"></button>
+    <button pButton type="button" icon="fa-eye" (click)="onView()"></button>
+    <button pButton type="button" icon="fa-pencil" (click)="onEdit()"></button>
+    <button pButton type="button" icon="fa-refresh" (click)="onRefreshAction.next()"></button>
+
+    <i class="fa fa-bars"></i>
+
+    <button pButton type="button" icon="fa-trash" class="ui-button-danger" (click)="onDelete()"></button>
+  </div>
+</p-toolbar>
+
+
+<p-dataTable [value]="data"
+             [selectionMode]="selectionMode"
+             [(selection)]="selected"
+             [contextMenu]="cm" [rows]="10"
+             (onRowDblclick)="this.onEdit()"
+             (onRowSelect)="onRowSelect.next($event)"
+             (onRowUnselect)="onRowUnselect.next($event)"
+             [paginator]="true">
+  <ng-content select="p-header"></ng-content>
+  <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+  <ng-content select="p-column"></ng-content>
+</p-dataTable>
+<p-contextMenu #cm [model]="menuItems"></p-contextMenu>
+

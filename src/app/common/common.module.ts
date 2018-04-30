@@ -6,10 +6,14 @@ import { TitleComponent } from './title/title.component'
 import { RandomMessageService } from './services/random-message.service'
 import { ExampleComponent } from './example/example.component'
 import { KeepHtmlPipe } from './pipes/keep-html.pipe'
+import { FormsModule } from '@angular/forms'
+import { InputTextModule } from 'primeng/primeng'
 
 @NgModule({
   imports: [
     AngularCommon,
+    FormsModule,
+    InputTextModule,
     HttpModule
   ],
   providers: [
@@ -22,7 +26,9 @@ import { KeepHtmlPipe } from './pipes/keep-html.pipe'
     HttpModule,
     TitleComponent,
     ExampleComponent,
-    KeepHtmlPipe
+    KeepHtmlPipe,
+    FormsModule,
+    InputTextModule
   ]
 })
 export class CommonModule {

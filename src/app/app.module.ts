@@ -10,6 +10,7 @@ import { InterceptorsModule } from './interceptors/interceptors.module'
 import { SecurityModule } from './security/security.module'
 import { HomeModule } from './home/home.module'
 import { ComponentsModule } from './components/components.module'
+import { GrowlModule } from 'primeng/growl'
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ComponentsModule } from './components/components.module'
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    GrowlModule,
     AuthModule,
     HomeModule,
     InterceptorsModule,

@@ -5,10 +5,12 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { CrudComponent } from './crud/crud.component'
 import { CommunicationComponent } from './communication/communication.component'
+import { CrudFormComponent } from './crud/crud-form/crud-form.component'
 
 export const componentsRoutes: Routes = [
   {path: 'communication', component: CommunicationComponent},
-  {path: 'crud', component: CrudComponent}
+  {path: 'crud', component: CrudComponent},
+  {path: 'crud/new', component: CrudFormComponent}
 ]
 
 @NgModule({
