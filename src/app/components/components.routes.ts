@@ -10,7 +10,8 @@ import { CrudFormComponent } from './crud/crud-form/crud-form.component'
 export const componentsRoutes: Routes = [
   {path: 'communication', component: CommunicationComponent},
   {path: 'crud', component: CrudComponent},
-  {path: 'crud/new', component: CrudFormComponent}
+  {path: 'crud/new', component: CrudFormComponent},
+  {path: 'crud/new/:id', component: CrudFormComponent}
 ]
 
 @NgModule({

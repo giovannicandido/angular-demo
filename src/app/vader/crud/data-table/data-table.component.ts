@@ -31,7 +31,7 @@ export class DataTableComponent<T extends SpringRestModel> implements OnInit {
   searchObject
 
   @Input()
-  selectionMode: 'single' | 'multiple'
+  selectionMode: 'single' | 'multiple' = 'single'
 
   @Output()
   onNewAction = new EventEmitter()

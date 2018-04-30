@@ -10,7 +10,7 @@ export class PessoaService extends RestService<PessoaModel> {
   }
 
   get URL(): string {
-    return '/api/pessoa'
+    return '/api/pessoas'
   }
 
   get resourceRel(): string {
