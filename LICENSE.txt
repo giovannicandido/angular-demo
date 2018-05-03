@@ -1,0 +1,21 @@
+Copyright (c) 2018 Giovanni Candido da Silva, Belo Horizonte Brazil. All rights reserved
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software for educational purposes only, and may NOT copy, modify,
+merge, publish, distribute, sublicense or make poses of any other commercial 
+or non-commercial use of any parts of the Software.
+
+You can use the software in the follow conditions:
+
+You are studing the software and its code, and running the software as is.
+You can modify the software in the learning process.
+You can contribute back your modifications to the software with the review of original author.
+The contributions will be subject to this terms.
+
+This project includes works under other copyright notices, including:
+
+Angular CLI - Copyright (c) 2017 Google, Inc.
+    (https://github.com/angular/angular-cli)
+UIAdmin - Copyright (c) 2017 Erik Campobadal
+    (https://github.com/ConsoleTVs/UIAdmin)
