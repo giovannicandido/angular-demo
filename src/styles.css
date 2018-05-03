@@ -97,7 +97,7 @@ html, body {
 
 @media (max-width: 960px) {
   .tm-sidebar-left {
-    opacity: 0;
+    opacity: 1;
   }
 }
 

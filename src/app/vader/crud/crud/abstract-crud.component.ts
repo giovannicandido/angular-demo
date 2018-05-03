@@ -37,7 +37,7 @@ export abstract class AbstractCrudComponent<T> implements AfterViewInit, OnDestr
   /**
    * Every App component has its own form implementation
    */
-  abstract getForm(): AbstractFormComponent
+  abstract getForm(): AbstractFormComponent<T>
 
   constructor(protected service: RestService<any>, protected notificationService: NotificationService) {
   }
