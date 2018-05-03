@@ -1,9 +1,9 @@
-import { Http, Response, URLSearchParams } from "@angular/http"
-import { Observable } from "rxjs/Observable"
-import { Subject } from "rxjs/Subject"
+import { Http, Response, URLSearchParams } from '@angular/http'
+import { Observable } from 'rxjs/Observable'
+import { Subject } from 'rxjs/Subject'
 import 'rxjs/add/operator/map'
-import 'rxjs/add/operator/toPromise';
-import { SpringRestModel } from "./spring-rest-model"
+import 'rxjs/add/operator/toPromise'
+import { SpringRestModel } from './spring-rest-model'
 
 /**
  * CRUD abstraction for rest services, specially Spring Data Rest Services
@@ -11,40 +11,34 @@ import { SpringRestModel } from "./spring-rest-model"
  */
 export abstract class RestService<T extends SpringRestModel> {
 
-  constructor(protected http: Http) {
-  }
-
   abstract get URL(): string
 
   abstract get resourceRel(): string
 
   protected _onNewData = new Subject<T>()
+  protected _onEditData = new Subject<T>()
+  protected _onLoadAll = new Subject<Array<T>>()
+
 
   get onNewData(): Observable<T> {
     return this._onNewData.asObservable()
   }
 
-  protected _onEditData = new Subject<T>()
-
   get onEditData(): Observable<T> {
     return this._onEditData.asObservable()
   }
-
-  protected _onLoadAll = new Subject<Array<T>>()
 
   get onLoadAll(): Observable<Array<T>> {
     return this._onLoadAll.asObservable()
   }
 
+
+  constructor(protected http: Http) {
+  }
+
   // TODO loadAll and onLoadAll?
-  loadAll(projection?: string): Observable<Array<T>> {
-
-    let searchParams = new URLSearchParams()
-    if (projection) {
-      searchParams.set("projection", projection)
-    }
-
-    return this.http.get(this.URL, {params: searchParams}).map(_ => this.toJson<T>(_)).map((values) => {
+  loadAll(): Observable<Array<T>> {
+    return this.http.get(this.URL).map(_ => this.toJson(_)).map((values) => {
       this._onLoadAll.next(values)
       return values
     });
@@ -66,6 +60,7 @@ export abstract class RestService<T extends SpringRestModel> {
 
 
   put(object: T): Observable<Response> {
+    console.info(object)
     let observable = this.http.put(object._links.self.href, object)
     return observable.map(response => {
       if (response.ok) {
@@ -80,13 +75,11 @@ export abstract class RestService<T extends SpringRestModel> {
   }
 
   // TODO more clear API onLoadAll vs search?
-  search(searchObject: any): Observable<Array<T>> {
+  search(searchObject: any) {
     let params = this.mapObjectToSearchParams(searchObject)
-    let subscription = this.http.get(this.URL, {search: params}).map(_ => this.toJson<T>(_))
-    subscription.subscribe((values) => {
+    this.http.get(this.URL, {search: params}).map(_ => this.toJson(_)).subscribe((values) => {
       this._onLoadAll.next(values)
     });
-    return subscription
 
   }
 
@@ -99,30 +92,11 @@ export abstract class RestService<T extends SpringRestModel> {
     return params
   }
 
-  /**
-   * Parse the Spring Rest response in a JSON Object
-   * TODO Better error and Logging (see: https://github.com/atende/angular-spa/issues/22 for a plan)
-   * @param {Response} r
-   * @param {string} resourceRel
-   * @returns {Array<E>}
-   */
-  toJson<E>(r: Response, resourceRel?: string): Array<E> {
-
-    if (resourceRel == null || undefined) {
-      resourceRel = this.resourceRel
-    }
-
+  toJson(r: Response): Array<T> {
     try {
       let json = r.json()
-      if (!json.hasOwnProperty('_embedded')) {
-        throw new Error('The response from server has no _embedded key, is this a Spring Data Rest Response?')
-      }
-
-      if (!json._embedded.hasOwnProperty(resourceRel)) {
-        throw new Error(`The RestService class of URL "${this.URL}" object has no key "${resourceRel}", 
-        is this the correct resourceRel for the RestService class? `)
-      }
-      return json._embedded[`${resourceRel}`]
+      console.debug(json)
+      return json._embedded[`${this.resourceRel}`]
 
     } catch (e) {
       console.error(e)

@@ -1,14 +1,14 @@
-import {async, ComponentFixture, TestBed} from "@angular/core/testing"
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import {DataTableComponent} from "./data-table.component"
-import {NotificationService} from "../../common/notification.service"
-import {CommonModule} from "@angular/common"
-import {ConfirmationService, ContextMenuModule, DataTableModule, ToolbarModule} from "primeng/primeng"
-import {VaderCommonModule} from "../../common/common.module"
+import { DataTableComponent } from './data-table.component'
+import { NotificationService } from '../../common/notification.service'
+import { CommonModule } from '@angular/common'
+import { ConfirmationService, ContextMenuModule, DataTableModule, ToolbarModule } from 'primeng/primeng'
+import { VaderCommonModule } from '../../common/common.module'
 
 describe('DataTableComponent', () => {
-  let component: DataTableComponent<any>;
-  let fixture: ComponentFixture<DataTableComponent<any>>;
+  let component: DataTableComponent;
+  let fixture: ComponentFixture<DataTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

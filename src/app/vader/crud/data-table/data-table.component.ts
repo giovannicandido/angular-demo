@@ -1,59 +1,23 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core"
-import { NotificationService } from "../../common/notification.service"
-import { ConfirmationService, MenuItem } from "primeng/primeng"
-import { SpringRestModel } from "../spring-rest-model"
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { NotificationService } from '../../common/notification.service'
+import { ConfirmationService, MenuItem } from 'primeng/primeng'
+import { SpringRestModel } from '../spring-rest-model'
 
 @Component({
   selector: 'vader-data-table',
-  styles: [
-      `:host {
-      display: inline-block
-    }`
-  ],
   templateUrl: './data-table.component.html'
 })
-export class DataTableComponent<T extends SpringRestModel> implements OnInit {
+export class DataTableComponent implements OnInit {
 
   @Input()
   options = {
     search: false,
     actions: true
   }
-  @Output()
-  onRowSelect: EventEmitter<T> = new EventEmitter()
-  @Output()
-  onRowUnselect: EventEmitter<T> = new EventEmitter()
-  selected: T
-  menuItems: MenuItem[];
-  @Input()
-  cols: Columns[] = []
-  @Input()
-  searchObject
+  protected _data: any[] = []
 
   @Input()
-  selectionMode: 'single' | 'multiple' = 'single'
-
-  @Output()
-  onNewAction = new EventEmitter()
-  @Output()
-  onEditAction: EventEmitter<T> = new EventEmitter()
-  @Output()
-  onDeleteAction: EventEmitter<T> = new EventEmitter()
-  @Output()
-  onRefreshAction: EventEmitter<T> = new EventEmitter()
-  @Output()
-  onSearchAction: EventEmitter<T> = new EventEmitter()
-  @Output()
-  onViewAction: EventEmitter<T> = new EventEmitter()
-
-
-  constructor(private notificationService: NotificationService, private confirmationService: ConfirmationService) {
-  }
-
-  protected _data: T[] = []
-
-  @Input()
-  get data(): T[] {
+  get data(): any[] {
     return this._data
   }
 
@@ -61,11 +25,47 @@ export class DataTableComponent<T extends SpringRestModel> implements OnInit {
     this._data = data
   }
 
+  @Output()
+  onRowSelect: EventEmitter<any> = new EventEmitter()
+  @Output()
+  onRowUnselect: EventEmitter<any> = new EventEmitter()
+
+  selected: any
+
+  menuItems: MenuItem[];
+
+  @Input()
+  cols: Columns[] = []
+
+  @Input()
+  searchObject
+
+  @Output()
+  onNewAction = new EventEmitter()
+
+  @Output()
+  onEditAction: EventEmitter<any> = new EventEmitter()
+
+  @Output()
+  onDeleteAction: EventEmitter<any> = new EventEmitter()
+
+  @Output()
+  onRefreshAction: EventEmitter<any> = new EventEmitter()
+
+  @Output()
+  onSearchAction: EventEmitter<any> = new EventEmitter()
+
+  @Output()
+  onViewAction: EventEmitter<any> = new EventEmitter()
+
+  constructor(private notificationService: NotificationService, private confirmationService: ConfirmationService) {
+  }
+
   ngOnInit() {
     this.menuItems = this.options.actions ? [
-      {label: 'Visualizar', icon: 'fa-eye', command: (event) => this.onView()},
-      {label: 'Editar', icon: 'fa-pencil', command: (event) => this.onEdit()},
-      {label: 'Deletar', icon: 'fa-trash', command: (event) => this.onDelete()}
+      {label: 'Visualizar', icon: 'ui-icon-visibility', command: (event) => this.onView()},
+      {label: 'Editar', icon: 'ui-icon-create', command: (event) => this.onEdit()},
+      {label: 'Deletar', icon: 'ui-icon-delete', command: (event) => this.onDelete()}
     ] : []
   }
 
@@ -92,11 +92,11 @@ export class DataTableComponent<T extends SpringRestModel> implements OnInit {
     this.onSearchAction.emit(this.searchObject)
   }
 
-  add(data: T) {
+  add(data: any) {
     this._data = [...this._data, data]
   }
 
-  remove(data: T) {
+  remove(data: any) {
     const index = this._data.indexOf(data)
     if (index > -1) {
       this._data = this._data.filter((element) => {
@@ -105,7 +105,7 @@ export class DataTableComponent<T extends SpringRestModel> implements OnInit {
     }
   }
 
-  executeForSelected(fn: (selected: any) => void) {
+  executeForSelected(fn: (selected) => void) {
     if (this.selected == null || this.selected === undefined) {
       this.notificationService.showMessage({detail: 'Selecione um registro'})
     } else {
@@ -113,11 +113,11 @@ export class DataTableComponent<T extends SpringRestModel> implements OnInit {
     }
   }
 
-  initData(data: T[]) {
+  initData(data: any[]) {
     this._data = data
   }
 
-  update(data: T) {
+  update(data: SpringRestModel) {
 
     const object = this._data.find(_ => _['_links']['self']['href'] === data._links.self.href)
 

@@ -3,7 +3,6 @@ import { AbstractFormComponent } from '../../../vader/crud'
 import { PessoaModel } from '../pessoa.model'
 import { NotificationService } from '../../../vader/common/notification.service'
 import { Logger } from 'angular-spa/logger'
-import { PessoaService } from '../pessoa.service'
 
 @Component({
   selector: 'app-crud-form',
@@ -13,9 +12,8 @@ import { PessoaService } from '../pessoa.service'
 export class CrudFormComponent extends AbstractFormComponent<PessoaModel> {
 
   constructor(notificationService: NotificationService,
-              logger: Logger,
-              service: PessoaService) {
-    super(notificationService, logger, service)
+              logger: Logger) {
+    super(notificationService, logger)
   }
 
 }

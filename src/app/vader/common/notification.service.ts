@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { MessageService } from 'primeng/components/common/messageservice';
+import { Injectable } from '@angular/core'
+import { MessageService } from 'primeng/components/common/messageservice'
 
 @Injectable()
 export class NotificationService {
@@ -15,5 +15,5 @@ export class NotificationService {
 export interface Message {
   detail: string,
   summary?: string,
-  severity?: 'warn' | 'info' | 'success' | 'error'
+  severity?: 'warn' | 'info' | 'success'
 }

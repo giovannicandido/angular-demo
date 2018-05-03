@@ -1,7 +1,7 @@
-import { NgModule } from "@angular/core"
-import { ModalComponent } from "./modal.component"
-import { CommonModule } from "@angular/common"
-import { ButtonModule, DialogModule, SharedModule } from "primeng/primeng"
+import { NgModule } from '@angular/core'
+import { ModalComponent } from './modal.component'
+import { CommonModule } from '@angular/common'
+import { ButtonModule, DialogModule, SharedModule } from 'primeng/primeng'
 
 /**
  * @author Giovanni Silva
@@ -11,6 +11,6 @@ import { ButtonModule, DialogModule, SharedModule } from "primeng/primeng"
   declarations: [ModalComponent],
   exports: [ModalComponent]
 })
-export class VaderModalModule {
+export class ModalModule {
 
 }

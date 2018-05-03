@@ -7,9 +7,7 @@ export class SpringRestModel {
 }
 
 export interface SpringRestLinks {
-  self: Href
-}
-
-export interface Href {
-  href: string
+  self: {
+    href: string
+  }
 }

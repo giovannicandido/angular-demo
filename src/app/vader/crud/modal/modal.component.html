@@ -4,13 +4,15 @@
           [responsive]="true">
 
   <div [id]="modalId" role="dialog" tabindex='-1' style="z-index: 6000">
-    <ng-content></ng-content>
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
   </div>
 
 
   <p-footer>
-    <button class="ui-button-secondary" type="button" pButton [label]="cancelTxt" (click)="hide()"></button>
-    <button pButton *ngIf="!confirmButtonRemoved"
+    <button type="button" pButton [label]="cancelTxt" (click)="hide()"></button>
+    <button pButton class="ui-button-info" *ngIf="!confirmButtonRemoved"
             type="submit"
             (click)="confirm()"
             [disabled]="confirmButtonDisabled"

@@ -1,5 +1,5 @@
-import {Component, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core"
-import {Key} from "ts-keycode-enum"
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core'
+import { Key } from 'ts-keycode-enum'
 // import { MdDialogRef } from "@angular/material"
 
 // Generate Random UID
@@ -38,10 +38,6 @@ export class ModalComponent implements OnInit {
 
   display = false
 
-  constructor() {
-
-  }
-
   /**
    * If user press Ctrl + Enter confirm the modal
    * @param $event
@@ -53,6 +49,10 @@ export class ModalComponent implements OnInit {
         this.confirm()
       }
     }
+  }
+
+  constructor() {
+
   }
 
   ngOnInit() {

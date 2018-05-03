@@ -1,7 +1,7 @@
-import {inject, TestBed} from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing'
 
-import {NotificationService} from './notification.service';
-import {MessageService} from "primeng/components/common/messageservice"
+import { NotificationService } from './notification.service'
+import { MessageService } from 'primeng/components/common/messageservice'
 
 describe('NotificationService', () => {
   beforeEach(() => {

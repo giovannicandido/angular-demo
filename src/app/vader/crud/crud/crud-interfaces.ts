@@ -1,4 +1,4 @@
-import {Observable} from "rxjs/Observable"
+import { Observable } from 'rxjs/Observable'
 
 export interface PreSave {
   preSave(data: SubmitEvent<any>): Observable<SubmitEvent<any>>
@@ -7,4 +7,5 @@ export interface PreSave {
 export interface SubmitEvent<T> {
   data: T
   editing: boolean
+  closeModal: boolean
 }

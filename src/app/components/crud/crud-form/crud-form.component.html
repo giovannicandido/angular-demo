@@ -1,6 +1,7 @@
 <div class="uk-container">
-  <form (ngSubmit)="submit()" [vaderDisabled]="disabled">
+  <form (ngSubmit)="doSubmit(form.value)" [vaderDisabled]="disabled">
     <fieldset class="uk-fieldset" [vaderDisabled]="disabled">
+      <input type="hidden" name="_links" ngModel />
       <div class="ui-g ui-fluid">
         <div class="ui-g-12 ui-md-4">
           <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
@@ -11,9 +12,6 @@
           <label>Email <input required pInputText ngModel name="email" label="Email"/></label>
         </div>
       </div>
-
-      <button type="submit" class="uk-button uk-button-primary">Save</button>
-
     </fieldset>
 
   </form>

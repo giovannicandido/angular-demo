@@ -11,6 +11,7 @@ import { SecurityModule } from './security/security.module'
 import { HomeModule } from './home/home.module'
 import { ComponentsModule } from './components/components.module'
 import { GrowlModule } from 'primeng/growl'
+import { ConfirmDialogModule } from 'primeng/primeng'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { GrowlModule } from 'primeng/growl'
     HomeModule,
     InterceptorsModule,
     SecurityModule,
-    ComponentsModule
+    ComponentsModule,
+    ConfirmDialogModule
   ],
   providers: [
     {

@@ -1,12 +1,11 @@
-import { NgModule } from "@angular/core"
-import { CommonModule } from "@angular/common"
-import { ButtonModule, ConfirmationService, ContextMenuModule, DataTableModule, ToolbarModule } from "primeng/primeng"
-import { DataTableComponent } from "./data-table/data-table.component"
-import { VaderCommonModule } from "../common/common.module"
-import { FormGroupComponent } from "./form-group/form-group.component"
-import { InputDisabledDirective } from "./input-disabled"
-import { VaderModalModule } from "./modal/modal.module";
-import { PageFilterActionsComponent } from './page-filter-actions/page-filter-actions.component'
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { ButtonModule, ConfirmationService, ContextMenuModule, DataTableModule, ToolbarModule } from 'primeng/primeng'
+import { DataTableComponent } from './data-table/data-table.component'
+import { VaderCommonModule } from '../common/common.module'
+import { FormGroupComponent } from './form-group/form-group.component'
+import { InputDisabledDirective } from './input-disabled'
+import { ModalModule } from './modal/modal.module'
 
 @NgModule({
   imports: [
@@ -16,7 +15,7 @@ import { PageFilterActionsComponent } from './page-filter-actions/page-filter-ac
     ContextMenuModule,
     ButtonModule,
     VaderCommonModule,
-    VaderModalModule
+    ModalModule
   ],
   providers: [
     ConfirmationService
@@ -24,17 +23,14 @@ import { PageFilterActionsComponent } from './page-filter-actions/page-filter-ac
   declarations: [
     DataTableComponent,
     FormGroupComponent,
-    InputDisabledDirective,
-    PageFilterActionsComponent
+    InputDisabledDirective
 
   ],
   exports: [
     DataTableComponent,
-    VaderModalModule,
+    ModalModule,
     InputDisabledDirective,
-    FormGroupComponent,
-    PageFilterActionsComponent,
-    VaderCommonModule
+    FormGroupComponent
   ]
 })
 export class VaderCrudModule {

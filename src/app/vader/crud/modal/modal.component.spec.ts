@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing"
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { ModalComponent } from "./modal.component"
-import { VaderModalModule } from "./modal.module"
-import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { ModalComponent } from './modal.component'
+import { ModalModule } from './modal.module'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
@@ -10,7 +10,7 @@ describe('ModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, VaderModalModule]
+      imports: [NoopAnimationsModule, ModalModule]
     })
       .compileComponents();
   }));

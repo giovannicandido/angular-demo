@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input} from "@angular/core"
+import { Directive, ElementRef, Input } from '@angular/core'
 
 /**
  * Directive to disable a form input or field based on boolean expression
@@ -9,10 +9,6 @@ import {Directive, ElementRef, Input} from "@angular/core"
 })
 export class InputDisabledDirective {
 
-  constructor(private el: ElementRef) {
-
-  }
-
   @Input('vaderDisabled')
   set disabled(disable: boolean) {
     if (disable) {
@@ -20,6 +16,10 @@ export class InputDisabledDirective {
     } else {
       this.enableElement()
     }
+  }
+
+  constructor(private el: ElementRef) {
+
   }
 
   disableElement() {

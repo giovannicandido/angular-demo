@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core'
-import { AbstractCrudComponent } from '../../vader/crud'
+import { Component, ViewChild } from '@angular/core'
+import { AbstractCrudComponent, AbstractFormComponent } from '../../vader/crud'
 import { PessoaService } from './pessoa.service'
 import { PessoaModel } from './pessoa.model'
 import { NotificationService } from '../../vader/common/notification.service'
-import { Router } from '@angular/router'
 import { Columns } from '../../vader/crud/data-table/data-table.component'
+import { CrudFormComponent } from './crud-form/crud-form.component'
 
 @Component({
   selector: 'app-crud',
@@ -21,13 +21,20 @@ export class CrudComponent extends AbstractCrudComponent<PessoaModel> {
       header: 'Email'
     }
   ]
-  constructor(pessoaService: PessoaService, notificationService: NotificationService, router: Router) {
-    super(pessoaService, notificationService, router)
+
+  @ViewChild(CrudFormComponent)
+  form: CrudFormComponent
+
+
+  constructor(pessoaService: PessoaService, notificationService: NotificationService) {
+    super(pessoaService, notificationService)
   }
 
-  getNewRouteUrl(): Array<any> {
-    return ['crud/new']
+  getForm(): AbstractFormComponent<PessoaModel> {
+    return this.form;
   }
+
+
 
 
 }
