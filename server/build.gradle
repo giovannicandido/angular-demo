@@ -27,6 +27,9 @@ repositories {
 dependencies {
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
   compile('org.springframework.boot:spring-boot-starter-data-rest')
+  compile 'org.keycloak:keycloak-spring-security-adapter:4.0.0.Beta2'
+  compile("org.springframework.boot:spring-boot-starter-security")
+
   runtime('com.h2database:h2')
   testCompile('org.springframework.boot:spring-boot-starter-test')
 }
