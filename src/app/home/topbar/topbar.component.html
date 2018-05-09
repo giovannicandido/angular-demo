@@ -7,7 +7,8 @@
           UI Admin
         </a>
       </div>
-      <div class="uk-navbar-right uk-light">
+      <!-- This will work when bug https://github.com/giovannicandido/angular-spa/issues/31 is solved -->
+      <div *secIsAuthenticated class="uk-navbar-right uk-light">
         <ul class="uk-navbar-nav">
           <li class="uk-active">
             <a href="#">Èrik &nbsp;<span class="ion-ios-arrow-down"></span></a>

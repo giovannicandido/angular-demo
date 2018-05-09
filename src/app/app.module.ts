@@ -36,7 +36,8 @@ import { ConfirmDialogModule } from 'primeng/primeng'
       useValue: {
         url: 'http://localhost:9080/auth',
         realm: 'master',
-        clientId: 'angular-demo'
+        clientId: 'angular-demo',
+        onLoad: 'check-sso'
       }
     }
   ],
